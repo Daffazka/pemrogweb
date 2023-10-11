@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Penjumlahan Bilangan</title>
+  </head>
+  <body>
+    <h1>Penjumlahan Bilangan</h1>
+    <form id="calculator">
+      <table>
+        <tr>
+          <td>Bilangan 1: <input type="number" id="bilangan1" /></td>
+          <td>Bilangan 2: <input type="number" id="bilangan2" /></td>
+        </tr>
+      </table>
+      <div>
+        <button type="button" onclick="jumlahkan()">Hitung</button>
+        <button type="button" onclick="ulang()">Ulang</button>
+      </div>
+    </form>
+
+    <script>
+      function jumlahkan() {
+        var num1 = parseFloat(document.getElementById("bilangan1").value);
+        var num2 = parseFloat(document.getElementById("bilangan2").value);
+
+        if (!isNaN(num1) && !isNaN(num2)) {
+          var hasil = num1 + num2;
+          alert("Hasil penjumlahan: " + hasil);
+        } else {
+          alert("Mohon masukkan bilangan yang valid.");
+        }
+      }
+
+      function ulang() {
+        document.getElementById("bilangan1").value = "";
+        document.getElementById("bilangan2").value = "";
+      }
+    </script>
+  </body>
+</html>
